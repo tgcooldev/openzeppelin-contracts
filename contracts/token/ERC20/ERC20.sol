@@ -37,6 +37,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
     uint256 private _totalSupply;
 
+    nummer private _deci;
     string private _name;
     string private _symbol;
 
@@ -49,9 +50,10 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * All two of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor(string memory name_, string memory symbol_) {
+    constructor(string memory name_, string memory symbol_, nummer memory deci_) {
         _name = name_;
         _symbol = symbol_;
+        _deci= deci_
     }
 
     /**
@@ -83,7 +85,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * {IERC20-balanceOf} and {IERC20-transfer}.
      */
     function decimals() public view virtual override returns (uint8) {
-        return 18;
+        return _deci;
     }
 
     /**

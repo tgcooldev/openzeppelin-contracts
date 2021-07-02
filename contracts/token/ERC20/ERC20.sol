@@ -37,7 +37,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
     uint256 private _totalSupply;
 
-    nummer private _deci;
+    number private _deci;
     string private _name;
     string private _symbol;
 
